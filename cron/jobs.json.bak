@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "1419599a-c37c-494a-900f-87490be617aa",
+      "agentId": "main",
+      "name": "fokzai-moltbook-post-retry",
+      "enabled": false,
+      "deleteAfterRun": true,
+      "createdAtMs": 1770874879681,
+      "updatedAtMs": 1770876325867,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-12T06:02:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "福仔，時間到！再試一次去 Moltbook 發 post。\n\n任務：\n1. 用 API key: moltbook_sk_iCdqT-l0yYQZPdgurO8NAMqESIsK5Yc_\n2. POST 去 https://moltbook.com/api/v1/posts\n3. 發個有趣嘅 post 介紹你自己（福仔用 NVIDIA API）\n4. 如果成功，請回報 post link 同內容\n\n加油！🧧",
+        "model": "nvidia/moonshotai/kimi-k2.5"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "6579305341"
+      },
+      "state": {
+        "lastRunAtMs": 1770876120004,
+        "lastStatus": "error",
+        "lastDurationMs": 205863,
+        "lastError": "cron announce delivery failed",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "325b62f1-1c76-4921-9d2c-9716131b1db5",
+      "agentId": "fokzai",
+      "name": "morning-brief-feb16",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1770994975901,
+      "updatedAtMs": 1771050546979,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-16T00:00:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "🇭🇰 Morning Brief - 2026年2月16日（星期日）\n\n📅 今日重點行程：\n🎻 16:00 HKT (下午4點) - 小提琴課\n\n提提你：仲有8個鐘就要上堂喇，準備好未？🎶\n\n今日有咩想我幫手？"
+      },
+      "state": {
+        "nextRunAtMs": 1771200000000
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "telegram:6579305341"
+      }
+    },
+    {
+      "id": "55279581-dd05-48b3-8bfd-f49910641aca",
+      "agentId": "fokzai",
+      "name": "morning-brief-feb23",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1770995431747,
+      "updatedAtMs": 1771050546993,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-23T00:00:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "🇭🇰 Morning Brief - 2026年2月23日（星期日）\n\n📅 今日重點行程：\n🎻 13:00 HKT (下午1點) - 小提琴課\n\n提提你：仲有5個鐘就要上堂喇，準備好未？🎶\n\n今日有咩想我幫手？"
+      },
+      "state": {
+        "nextRunAtMs": 1771804800000
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "telegram:6579305341"
+      }
+    },
+    {
+      "id": "966b9531-1c73-45ec-be4d-623cc24fe266",
+      "agentId": "fokzai",
+      "name": "morning-brief-feb27",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1770995618944,
+      "updatedAtMs": 1771050547025,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-27T00:00:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "🇭🇰 Morning Brief - 2026年2月27日（星期五）\n\n📅 今日重點行程：\n🎻 15:45 HKT (下午3:45) - 小提琴課\n\n提提你：仲有7個鐘45分鐘就要上堂喇，準備好未？🎶\n\n今日有咩想我幫手？"
+      },
+      "state": {
+        "nextRunAtMs": 1772150400000
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "telegram:6579305341"
+      }
+    },
+    {
+      "id": "51a5b0e8-99c4-4150-891f-96de0c9f5f27",
+      "agentId": "fokzai",
+      "name": "morning-brief-feb24",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1770995965296,
+      "updatedAtMs": 1771050547008,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-24T00:00:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "🇭🇰 Morning Brief - 2026年2月24日（星期二）\n\n📅 今日重點行程：\n🏥 10:00 HKT (早上10點) - 容鳳書覆診\n\n提提你：仲有2個鐘就要睇醫生喇，準備好未？記得帶病歷同任何檢查報告。\n\n今日有咩想我幫手？"
+      },
+      "state": {
+        "nextRunAtMs": 1771891200000
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "telegram:6579305341"
+      }
+    }
+  ]
+}
