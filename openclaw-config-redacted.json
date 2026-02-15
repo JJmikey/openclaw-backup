@@ -1,0 +1,318 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.10",
+    "lastTouchedAt": "2026-02-15T05:34:09.515Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-02-12T00:00:35.839Z",
+    "lastRunVersion": "2026.2.10",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "update": {
+    "checkOnStart": true
+  },
+  "auth": {
+    "profiles": {
+      "kimi-coding:default": {
+        "provider": "kimi-coding",
+        "mode": "api_key"
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "nvidia": {
+        "baseUrl": "https://integrate.api.nvidia.com/v1",
+        "apiKey": "__REDACTED__",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "moonshotai/kimi-k2.5",
+            "name": "moonshotai/kimi-k2.5",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "minimaxai/minimax-m2.1",
+            "name": "minimaxai/minimax-m2.1",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 100000,
+            "maxTokens": 4096
+          },
+          {
+            "id": "stepfun-ai/step-3.5-flash",
+            "name": "stepfun-ai/step-3.5-flash",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "kimi-coding/k2p5"
+      },
+      "models": {
+        "kimi-coding/k2p5": {
+          "alias": "Kimi K2.5"
+        },
+        "nvidia/moonshotai/kimi-k2.5": {
+          "alias": "Kimi K2.5 (Nvidia)"
+        },
+        "nvidia/minimaxai/minimax-m2.1": {
+          "alias": "MiniMax M2.1 (Nvidia)"
+        },
+        "nvidia/stepfun-ai/step-3.5-flash": {
+          "alias": "Step-3.5 Flash (Nvidia)"
+        }
+      },
+      "workspace": "/data/workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8,
+        "model": "nvidia/moonshotai/kimi-k2.5"
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "default": true,
+        "name": "龍蝦仔",
+        "model": {
+          "primary": "kimi-coding/k2p5"
+        },
+        "identity": {
+          "name": "龍蝦仔",
+          "emoji": "🦞"
+        },
+        "groupChat": {
+          "mentionPatterns": [
+            "龍蝦仔",
+            "@lobsterboyy_bot"
+          ]
+        }
+      },
+      {
+        "id": "fokzai",
+        "default": false,
+        "name": "福仔",
+        "model": {
+          "primary": "nvidia/moonshotai/kimi-k2.5"
+        },
+        "identity": {
+          "name": "福仔",
+          "emoji": "🧧"
+        },
+        "groupChat": {
+          "mentionPatterns": [
+            "福仔",
+            "@fok_zai_bot"
+          ]
+        }
+      },
+      {
+        "id": "pingping",
+        "default": false,
+        "name": "平平",
+        "model": {
+          "primary": "nvidia/minimaxai/minimax-m2.1"
+        },
+        "identity": {
+          "name": "平平",
+          "emoji": "⚖️"
+        },
+        "groupChat": {
+          "mentionPatterns": [
+            "平平",
+            "@pingping_bot"
+          ]
+        }
+      },
+      {
+        "id": "faatzai",
+        "default": false,
+        "name": "發仔",
+        "model": {
+          "primary": "nvidia/stepfun-ai/step-3.5-flash"
+        },
+        "identity": {
+          "name": "發仔",
+          "emoji": "💰"
+        },
+        "groupChat": {
+          "mentionPatterns": [
+            "發仔",
+            "@faat_zai_bot"
+          ]
+        }
+      }
+    ]
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "apiKey": "__REDACTED__"
+      }
+    },
+    "agentToAgent": {
+      "enabled": true,
+      "allow": [
+        "main",
+        "fokzai",
+        "pingping",
+        "faatzai"
+      ]
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "telegram",
+        "accountId": "lobster"
+      }
+    },
+    {
+      "agentId": "fokzai",
+      "match": {
+        "channel": "telegram",
+        "accountId": "fokzai"
+      }
+    },
+    {
+      "agentId": "pingping",
+      "match": {
+        "channel": "telegram",
+        "accountId": "pingping"
+      }
+    },
+    {
+      "agentId": "faatzai",
+      "match": {
+        "channel": "telegram",
+        "accountId": "faatzai"
+      }
+    }
+  ],
+  "messages": {
+    "groupChat": {
+      "mentionPatterns": [
+        "龍蝦仔",
+        "福仔",
+        "@lobsterboyy_bot",
+        "@fok_zai_bot"
+      ]
+    },
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true
+  },
+  "channels": {
+    "telegram": {
+      "dmPolicy": "pairing",
+      "botToken": "__REDACTED__",
+      "groupPolicy": "allowlist",
+      "streamMode": "partial",
+      "accounts": {
+        "fokzai": {
+          "dmPolicy": "pairing",
+          "botToken": "__REDACTED__",
+          "allowFrom": [
+            6579305341
+          ],
+          "groupPolicy": "open",
+          "streamMode": "partial"
+        },
+        "lobster": {
+          "dmPolicy": "pairing",
+          "botToken": "__REDACTED__",
+          "allowFrom": [
+            6579305341
+          ],
+          "groupPolicy": "allowlist",
+          "streamMode": "partial"
+        },
+        "pingping": {
+          "dmPolicy": "pairing",
+          "botToken": "__REDACTED__",
+          "groupPolicy": "allowlist",
+          "streamMode": "partial"
+        },
+        "faatzai": {
+          "dmPolicy": "pairing",
+          "botToken": "__REDACTED__",
+          "groupPolicy": "open",
+          "streamMode": "partial"
+        }
+      }
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "controlUi": {
+      "allowInsecureAuth": true
+    },
+    "auth": {
+      "mode": "token",
+      "token": "__REDACTED__"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "telegram": {
+        "enabled": true
+      }
+    }
+  }
+}
